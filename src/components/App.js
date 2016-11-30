@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import HeaderContainer from '../containers/HeaderContainer.js'
+import { fetchForecast, receiveForecast } from '../actions/index.js'
 
 class App extends Component {
 
   componentWillMount () {
-    console.log('Hello!');
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(position.coords.latitude, position.coords.longitude);
+    navigator.geolocation.getCurrentPosition((position) => {
+      receiveForecast();
+      fetchForecast(position.coords.latitude, position.coords.longitude);
     });
   }
 
