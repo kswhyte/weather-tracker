@@ -1,16 +1,25 @@
-export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
-
 export const receiveForecast = (forecastData) => {
-  console.log('pong')
+  console.log(forecastData)
   return ({
-  // action object
+    type: 'RECEIVE_FORECAST',
+    payload: forecastData,
+    city: forecastData.city.name,
+    temp: forecastData.list.main.temp,
+    tempMin: forecastData.list.main.temp_min,
+    tempMax: forecastData.list.main.temp_max,
+    humidity: forecastData.list.main.humidity,
+    mainWeather: forecastData.list.weather.main,
+    description: forecastData.list.weather.description,
+    icon: forecastData.list.weather.icon,
+    wind: forecastData.list.wind.speed
   });
 };
 
 export const fetchForecast = (lat, lon) => {
-  console.log('ping')
-  console.log(lat, lon);
   return (dispatch) => {
-    return {}
-  }
+    return fetch(`api.openweathermap.org/data/2.5/forecast?lat=
+      ${lat}&lon=${lon}&units=imperial&APPID=9b829427a8de3cc61102432f7b62fd6d`)
+        .then(forecastData => dispatch(receiveForecast(forecastData)))
+        .catch(error => console.log('error'));
+  };
 };

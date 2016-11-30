@@ -12,12 +12,12 @@ const middleware = [thunk, createLogger];
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(combineReducers({ weatherApp: reducer }), {}, composeEnhancers(
- applyMiddleware(...middleware)
+  applyMiddleware(...middleware)
 ));
 
 render(
- <Provider store={store}>
+  <Provider store={store}>
    <Routes history={browserHistory} />
- </Provider>,
- document.getElementById('root')
+  </Provider>,
+  document.getElementById('root')
 )
