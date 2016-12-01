@@ -21,6 +21,7 @@ export const fetchForecast = (lat, lon) => {
   return (dispatch) => {
     return fetch(`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&APPID=9b829427a8de3cc61102432f7b62fd6d`)
     .then(response => console.log(response))
-    .then(forecastData => dispatch(receiveForecast(forecastData)));
+    .then(forecastData => dispatch(receiveForecast(forecastData)))
+    .catch(error => console.log(error));
   };
 };
