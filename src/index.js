@@ -7,8 +7,6 @@ import thunk from 'redux-thunk';
 import reducer from './reducers';
 import Routes from './routes';
 
-// const middleware = [thunk];
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(combineReducers({ weatherApp: reducer }), {}, composeEnhancers(
   applyMiddleware(thunk),

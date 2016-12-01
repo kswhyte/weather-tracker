@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 
-
 const mapStateToProps = (state) => {
   // return an object of redux store data
   // that you'd like available in your component
   // this will need current location by default or user choice location
-  return {};
+  const { city } = state.weatherApp;
+  return {
+    city,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
