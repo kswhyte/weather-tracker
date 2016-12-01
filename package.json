@@ -3,16 +3,25 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
     "react-scripts": "^0.6.0",
-    "redux-logger": "^2.6.1"
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.1.1"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "redux-logger": "^2.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
