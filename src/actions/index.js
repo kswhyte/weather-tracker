@@ -1,6 +1,8 @@
+import fetch from 'isomorphic-fetch';
+
 export const receiveForecast = (forecastData) => {
-  console.log(forecastData)
-  return ({
+  console.log(forecastData);
+  return {
     type: 'RECEIVE_FORECAST',
     payload: forecastData,
     city: forecastData.city.name,
@@ -11,15 +13,14 @@ export const receiveForecast = (forecastData) => {
     mainWeather: forecastData.list.weather.main,
     description: forecastData.list.weather.description,
     icon: forecastData.list.weather.icon,
-    wind: forecastData.list.wind.speed
-  });
+    wind: forecastData.list.wind.speed,
+  };
 };
 
 export const fetchForecast = (lat, lon) => {
   return (dispatch) => {
-    return fetch(`api.openweathermap.org/data/2.5/forecast?lat=
-      ${lat}&lon=${lon}&units=imperial&APPID=9b829427a8de3cc61102432f7b62fd6d`)
-        .then(forecastData => dispatch(receiveForecast(forecastData)))
-        .catch(error => console.log('error'));
+    return fetch(`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&APPID=9b829427a8de3cc61102432f7b62fd6d`)
+    .then(response => console.log(response))
+    .then(forecastData => dispatch(receiveForecast(forecastData)));
   };
 };

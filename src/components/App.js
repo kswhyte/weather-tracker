@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import HeaderContainer from '../containers/HeaderContainer.js'
-import { fetchForecast } from '../actions/index.js'
+import HeaderContainer from '../containers/HeaderContainer';
+import { fetchForecast } from '../actions/index';
 
 class App extends Component {
 
-  componentWillMount () {
+  componentWillMount() {
     navigator.geolocation.getCurrentPosition((position) => {
       fetchForecast(position.coords.latitude, position.coords.longitude);
     });
@@ -15,8 +15,8 @@ class App extends Component {
       <div>
         <HeaderContainer />
       </div>
-    )
+    );
   }
 }
 
-module.exports = App
+module.exports = App;

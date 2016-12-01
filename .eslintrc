@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "react/prefer-stateless-function": "off",
+    "react/jsx-filename-extension": "off",
+    "arrow-body-style": "off"
+  }
+}
