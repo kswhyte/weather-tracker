@@ -1,4 +1,4 @@
-const exampleReducer = (state = {}, action) => {
+const App = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_FORECAST':
       return {
@@ -10,11 +10,11 @@ const exampleReducer = (state = {}, action) => {
         mainWeather: action.mainWeather,
         description: action.description,
         icon: action.icon,
-        wind: action.wind
-      }
+        wind: action.wind,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default exampleReducer;
+export default App;
