@@ -9,13 +9,10 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = ({
   // return an object of methods you'd like
   // to dispatch as redux actions
-  return {
-    fetchForecast: dispatch(fetchForecast)
-
-  };
-};
+  fetchForecast,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
