@@ -3,32 +3,38 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.11.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
+    "react-addons-test-utils": "^15.4.1",
     "react-scripts": "^0.6.0",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.1.1"
+    "redux-devtools-log-monitor": "^1.1.1",
   },
   "dependencies": {
+    "enzyme": "^2.6.0",
     "isomorphic-fetch": "^2.2.1",
+    "mocha": "^3.2.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "redux-logger": "^2.6.1"
+    "redux-logger": "^2.6.1",
+    "sinon": "^1.17.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
-  }
+  },
 }
