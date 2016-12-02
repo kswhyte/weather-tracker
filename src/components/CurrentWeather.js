@@ -9,6 +9,13 @@ class CurrentWeather extends Component {
       hideExtended: true,
     };
   }
+
+  toggleHideExtended() {
+    this.setState({
+      hideExtended: !this.state.hideExtended,
+    });
+  }
+
   render() {
     const currentTemp = Math.round(this.props.temp);
 
@@ -23,7 +30,7 @@ class CurrentWeather extends Component {
         <h3> Description: {this.props.mainWeather} </h3>
         <h3> Low: {lowTemp}°F </h3>
         <h3> High: {highTemp}°F </h3>
-        <button> Show Extended Forecast </button>
+        <button onClick={this.toggleHideExtended.bind(this)}> Show Extended Forecast </button>
         <div
           className="extended-forecast"
           hidden={this.state.hideExtended}
