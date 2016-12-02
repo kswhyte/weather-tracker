@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <div>
         <HeaderContainer />
+        { this.props.children }
       </div>
     );
   }
