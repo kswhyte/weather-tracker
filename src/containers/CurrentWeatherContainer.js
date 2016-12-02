@@ -1,20 +1,21 @@
 import { connect } from 'react-redux';
-import App from '../components/App';
-
-
-import { fetchForecast } from '../actions/index';
+import CurrentWeather from '../components/CurrentWeather';
 
 const mapStateToProps = (state) => {
   // return an object of redux store data
   // that you'd like available in your component
-  return {};
+  const { temp, tempMin, tempMax, mainWeather } = state.weatherApp;
+  return {
+    temp,
+    tempMin,
+    tempMax,
+    mainWeather,
+  };
 };
 
 const mapDispatchToProps = ({
   // return an object of methods you'd like
   // to dispatch as redux actions
-  fetchForecast,
 });
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(CurrentWeather);
