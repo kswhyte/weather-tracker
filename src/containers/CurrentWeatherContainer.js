@@ -4,11 +4,12 @@ import CurrentWeather from '../components/CurrentWeather';
 const mapStateToProps = (state) => {
   // return an object of redux store data
   // that you'd like available in your component
-  const { temp, tempMin, tempMax } = state.weatherApp;
+  const { temp, tempMin, tempMax, mainWeather } = state.weatherApp;
   return {
     temp,
     tempMin,
     tempMax,
+    mainWeather,
   };
 };
 
