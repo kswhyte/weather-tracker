@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Settings extends Component {
+class ExtendedForecast extends Component {
   render() {
     return (
       <div>
-        <h1>EXT F</h1>
+        <h1>EXTENDED AF </h1>
       </div>
     );
   }
 }
 
-module.exports = Settings;
+module.exports = ExtendedForecast;

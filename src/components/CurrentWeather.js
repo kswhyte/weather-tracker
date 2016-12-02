@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ExtendedForecastContainer from '../containers/ExtendedForecastContainer';
+
 class CurrentWeather extends Component {
   render() {
 
@@ -17,6 +19,9 @@ class CurrentWeather extends Component {
         <h3> Low: {lowTemp}°F </h3>
         <h3> High: {highTemp}°F </h3>
         <button> Show Extended Forecast </button>
+        <div className="extended-forecast">
+          <ExtendedForecastContainer />
+        </div>
       </div>
     );
   }
