@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Settings extends Component {
+class CurrentWeather extends Component {
   render() {
     return (
       <div>
-        <h1>HEYYOO</h1> 
+        <h1>HEYYOO</h1>
       </div>
     );
   }
 }
 
-module.exports = Settings;
+module.exports = CurrentWeather;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ExtendedForecast from '../components/ExtendedForecast';
+import CurrentWeather from '../components/CurrentWeather';
 
 const mapStateToProps = (state) => {
   // return an object of redux store data
@@ -12,4 +12,4 @@ const mapDispatchToProps = ({
   // to dispatch as redux actions
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExtendedForecast);
+export default connect(mapStateToProps, mapDispatchToProps)(CurrentWeather);
