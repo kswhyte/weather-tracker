@@ -31,13 +31,13 @@ class CurrentWeather extends Component {
         <h3> Low: {lowTemp}°F </h3>
         <h3> High: {highTemp}°F </h3>
         <button onClick={this.toggleHideExtended}> Show Extended Forecast </button>
-        <div
+        {/* <div
           className="extended-forecast"
           hidden={this.state.hideExtended}
         >
           <ExtendedForecastContainer />
-        </div>
-        {/* {!this.state.hideExtended && (<ExtendedForecastContainer />)} -- alternative to lines 34-39 */}
+        </div> */}
+        {!this.state.hideExtended && (<ExtendedForecastContainer />)}
       </div>
     );
   }
