@@ -3,7 +3,8 @@ import { Router, Route, IndexRedirect } from 'react-router';
 
 import CurrentWeatherContainer from './containers/CurrentWeatherContainer';
 import SettingsContainer from './containers/SettingsContainer';
-import ExtendedForecastContainer from './containers/ExtendedForecastContainer';
+import ExtendedForecast from './components/ExtendedForecast';
+import FullDay from './components/FullDay';
 import App from './containers/AppContainer';
 
 const Routes = props => (
@@ -12,7 +13,8 @@ const Routes = props => (
       <IndexRedirect to="/currentweather" component={CurrentWeatherContainer} />
       <Route path="/currentweather" component={CurrentWeatherContainer} />
       <Route path="/settings" component={SettingsContainer} />
-      <Route path="/extendedforecast" component={ExtendedForecastContainer} />
+      <Route path="/extendedforecast" component={ExtendedForecast} />
+      <Route path="/fullday" component={FullDay} />
     </Route>
   </Router>
 );

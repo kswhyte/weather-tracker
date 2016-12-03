@@ -1,6 +1,7 @@
 const App = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_FORECAST':
+      console.log(action.json);
       return {
         ...state,
       };

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 
-import ExtendedForecastContainer from '../containers/ExtendedForecastContainer';
+import ExtendedForecast from './ExtendedForecast';
+import FullDay from './FullDay';
+import WeatherSummary from './WeatherSummary';
 
 class CurrentWeather extends Component {
   constructor() {
     super();
     this.state = {
       hideExtended: true,
+      hideFullDay: true,
     };
     this.toggleHideExtended = this.toggleHideExtended.bind(this);
+    this.toggleHideFullDay = this.toggleHideFullDay.bind(this);
   }
 
   toggleHideExtended() {
@@ -17,27 +21,25 @@ class CurrentWeather extends Component {
     });
   }
 
+  toggleHideFullDay() {
+    this.setState({
+      hideFullDay: !this.state.hideFullDay,
+    });
+  }
+
   render() {
-    const currentTemp = Math.round(this.props.temp);
-
-    const lowTemp = Math.round(this.props.tempMin);
-
-    const highTemp = Math.round(this.props.tempMax);
-
     return (
       <div>
-        <h3> Current: {currentTemp}°F </h3>
-        <h3> Description: {this.props.mainWeather} </h3>
-        <h3> Low: {lowTemp}°F </h3>
-        <h3> High: {highTemp}°F </h3>
+        <WeatherSummary
+          currentTemp={Math.round(this.props.temp)}
+          lowTemp={Math.round(this.props.tempMin)}
+          highTemp={Math.round(this.props.tempMax)}
+          mainWeather={this.props.mainWeather}
+        />
+        <button onClick={this.toggleHideFullDay}> Show Full Day Forecast </button>
         <button onClick={this.toggleHideExtended}> Show Extended Forecast </button>
-        {/* <div
-          className="extended-forecast"
-          hidden={this.state.hideExtended}
-        >
-          <ExtendedForecastContainer />
-        </div> */}
-        {!this.state.hideExtended && (<ExtendedForecastContainer />)}
+        {!this.state.hideFullDay && (<FullDay />)}
+        {!this.state.hideExtended && (<ExtendedForecast />)}
       </div>
     );
   }
