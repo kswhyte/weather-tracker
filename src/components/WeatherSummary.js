@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExtendedForecast = ({ currentTemp, lowTemp, highTemp, mainWeather }) => {
+const WeatherSummary = ({ currentTemp, lowTemp, highTemp, mainWeather }) => {
   return (
     <div>
       <h3> Current: {currentTemp}°F </h3>
@@ -12,4 +12,4 @@ const ExtendedForecast = ({ currentTemp, lowTemp, highTemp, mainWeather }) => {
 };
 
 
-module.exports = ExtendedForecast;
+module.exports = WeatherSummary;

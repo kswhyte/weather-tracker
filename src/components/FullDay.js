@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ExtendedForecast extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Full Day</h1>
-      </div>
-    );
-  }
-}
+const FullDay = ({ currentTemp, lowTemp, highTemp, mainWeather }) => {
+  return (
+    <div>
+      <h1>FullDay</h1>
+    </div>
+  );
+};
 
-module.exports = ExtendedForecast;
+module.exports = FullDay;
