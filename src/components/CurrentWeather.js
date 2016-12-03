@@ -15,6 +15,18 @@ class CurrentWeather extends Component {
     this.toggleHideFullDay = this.toggleHideFullDay.bind(this);
   }
 
+  componentWillMount() {
+    const { fetchForecast } = this.props;
+    console.log('city', this.props.params.city);
+    if (this.props.params.city === 'currentLocation') {
+      navigator.geolocation.getCurrentPosition((position) => {
+        fetchForecast({ lat: position.coords.latitude, lon: position.coords.longitude });
+      });
+    } else {
+      fetchForecast({ city: this.props.params.city });
+    }
+  }
+
   toggleHideExtended() {
     this.setState({
       hideExtended: !this.state.hideExtended,
