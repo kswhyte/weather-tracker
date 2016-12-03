@@ -1,9 +1,11 @@
 import React from 'react';
+import ThreeHourSummary from './ThreeHourSummary';
 
-const FullDay = ({ currentTemp, lowTemp, highTemp, mainWeather }) => {
+const FullDay = ({ fullDay }) => {
+  console.log('FullDay:', fullDay);
   return (
     <div>
-      <h1>FullDay</h1>
+      {fullDay.map(d => <ThreeHourSummary data={d} key={d.dt} />)}
     </div>
   );
 };
