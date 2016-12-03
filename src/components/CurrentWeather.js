@@ -38,7 +38,7 @@ class CurrentWeather extends Component {
         />
         <button onClick={this.toggleHideFullDay}> Show Full Day Forecast </button>
         <button onClick={this.toggleHideExtended}> Show Extended Forecast </button>
-        {!this.state.hideFullDay && (<FullDay />)}
+        {!this.state.hideFullDay && (<FullDay fullDay={this.props.fullDay} />)}
         {!this.state.hideExtended && (<ExtendedForecast />)}
       </div>
     );
