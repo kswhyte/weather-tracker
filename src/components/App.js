@@ -7,7 +7,8 @@ class App extends Component {
   componentWillMount() {
     const { fetchForecast } = this.props;
     navigator.geolocation.getCurrentPosition((position) => {
-      fetchForecast(position.coords.latitude, position.coords.longitude);
+      fetchForecast({ lat: position.coords.latitude, lon: position.coords.longitude });
+      // fetchForecast({ city: 'london' });
     });
   }
 
