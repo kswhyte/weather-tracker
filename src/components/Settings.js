@@ -4,7 +4,7 @@ class Settings extends Component {
   render() {
     return (
       <div>
-        <h1>HEYYOO</h1> 
+        <h1>HEYYOO</h1>
       </div>
     );
   }

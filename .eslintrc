@@ -12,6 +12,8 @@
     "react/jsx-filename-extension": "off",
     "arrow-body-style": "off",
     "react/prop-types": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
   }
 }
