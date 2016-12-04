@@ -1,10 +1,11 @@
 import React from 'react';
-import ThreeHourSummary from './ThreeHourSummary';
+import WeekSummary from './WeekSummary';
 
-const ExtendedForecast = ({ currentTemp }) => {
+const ExtendedForecast = ({ fullWeek }) => {
+  console.log('FullWeek:', fullWeek);
   return (
     <div>
-      <h2>24 hour forecast</h2>
+  
     </div>
   );
 };
