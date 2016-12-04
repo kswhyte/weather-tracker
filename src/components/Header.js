@@ -6,7 +6,7 @@ class Header extends Component {
       <div>
         <button className="settings-button">Settings</button>
         <h1> { this.props.city || 'City' } </h1>
-        <button>DropDown</button>
+        <button className="dropdown-button">DropDown</button>
       </div>
     );
   }

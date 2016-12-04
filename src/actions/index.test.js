@@ -3,13 +3,12 @@ import { shallow, mount } from 'enzyme';
 import * as actions from './index';
 
 // describe('actions', () => {
-//   it('should create an action to receiveWeather', () => {
-//     const lat = 90;
-//     const lon = 140;
+//   it('should create an action to receiveAPI', () => {
+//     const weather = 'sunny';
 //     const expectedAction = {
 //       type: 'RECEIVE_WEATHER',
-//       json
+//       weather,
 //     };
-//     expect(actions.receiveWeather(lat, lon)).toEqual(expectedAction);
+//     expect(actions.receiveAPI(weather)).toEqual(expectedAction);
 //   });
 // });

@@ -9,6 +9,11 @@ describe('Header', () => {
     expect(wrapper.find('.settings-button')).to.have.length(1);
   });
 
+  it('should render a Settings Button', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper.find('.dropdown-button')).to.have.length(1);
+  });
+
   it('should render a default title of "City" in the <h1> tag', () => {
     const wrapper = shallow(
       <Header>
