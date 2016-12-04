@@ -1,11 +1,7 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
-<<<<<<< HEAD
-
-
 import { fetchForecast } from '../actions/index';
-=======
->>>>>>> master
+
 
 const mapStateToProps = (state) => {
   // return an object of redux store data
