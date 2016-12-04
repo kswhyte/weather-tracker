@@ -5,13 +5,14 @@ import { fetchForecast } from '../actions/index';
 const mapStateToProps = (state) => {
   // return an object of redux store data
   // that you'd like available in your component
-  const { temp, tempMin, tempMax, mainWeather, fullDay } = state.weatherApp;
+  const { temp, tempMin, tempMax, mainWeather, fullDay, fullWeek } = state.weatherApp;
   return {
     temp,
     tempMin,
     tempMax,
     mainWeather,
     fullDay,
+    fullWeek,
   };
 };
 

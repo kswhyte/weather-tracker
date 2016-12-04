@@ -27,8 +27,8 @@ const App = (state = {}, action) => {
       console.log('DAILY: ', action.json);
       return {
         ...state,
+        fullWeek: take(action.json.list, 7)
       };
-
     default:
       return state;
   }
