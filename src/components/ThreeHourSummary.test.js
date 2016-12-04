@@ -11,6 +11,15 @@ describe('ThreeHourSummary', () => {
     const wrapper = shallow(
       <ThreeHourSummary />
     );
-    expect(wrapper.find('.summary-data')).to.have.length(4)
+    expect(wrapper.find('.summary-data')).to.have.length(4);
   });
+
+
+  it('should mount without props', () => {
+    const wrapper = mount(
+      <ThreeHourSummary />,
+    );
+    expect(wrapper).to.have.length(1);
+  });
+
 });

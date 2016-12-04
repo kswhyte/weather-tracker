@@ -7,11 +7,6 @@ import WeatherSummary from './WeatherSummary';
 
 
 describe('CurrentWeather', () => {
-  it('should render the WeatherSummary component', () => {
-    const wrapper = mount(<CurrentWeather />);
-    expect(wrapper.find(<WeatherSummary />)).to.equal(true);
-  });
-
   it('should render the Full Day button', () =>{
     const wrapper = mount(
       <CurrentWeather />,
@@ -21,7 +16,9 @@ describe('CurrentWeather', () => {
 
   it('calls componentWillMount', () => {
     sinon.spy(CurrentWeather.prototype, 'componentWillMount');
-    const wrapper = mount(<CurrentWeather />);
+    const wrapper = mount(
+      <CurrentWeather />,
+    );
     expect(CurrentWeather.prototype.componentWillMount.calledOnce).to.equal(true);
   });
 });

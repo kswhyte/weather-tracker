@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { pull, isUndefined } from 'lodash';
 import { Link } from 'react-router';
 
-import SettingsContainer from '../containers/SettingsContainer';
 import NewLocationInputContainer from '../containers/NewLocationInputContainer';
 
 const Settings = ({ pinnedCities, removeCity }) => {

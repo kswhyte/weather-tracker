@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { fakeStore } from '../test/fakeStore';
 
-import HeaderContainer from './HeaderContainer';
+import { HeaderContainer } from './HeaderContainer';
 
 const setup = () => {
   const props = {
