@@ -32,7 +32,7 @@ class CurrentWeather extends Component {
     });
     if (!this.state.hideFullDay) {
       this.setState({
-        hideFullDay: true,
+        hideExtended: true,
       })
     }
   }
