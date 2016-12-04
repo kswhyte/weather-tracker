@@ -1,9 +1,10 @@
 import React from 'react';
+import ThreeHourSummary from './ThreeHourSummary';
 
-const ExtendedForecast = ({ currentTemp, lowTemp, highTemp, mainWeather }) => {
+const ExtendedForecast = ({ currentTemp }) => {
   return (
     <div>
-      <h1>extendedforecast</h1>
+      <h2>24 hour forecast</h2>
     </div>
   );
 };
