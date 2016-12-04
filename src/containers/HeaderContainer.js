@@ -5,9 +5,10 @@ const mapStateToProps = (state) => {
   // return an object of redux store data
   // that you'd like available in your component
   // this will need current location by default or user choice location
-  const { city } = state.weatherApp;
+  const { city, pinnedCities } = state.weatherApp;
   return {
     city,
+    pinnedCities,
   };
 };
 

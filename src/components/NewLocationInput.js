@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-import { fetchForecast } from '../actions/index';
-
-const NewLocationInput = ({ onSubmit }) => {
+const NewLocationInput = ({ onSubmit, pinCity, disabled }) => {
   let input;
   // focus() {
   //   this.textInput.focus();
@@ -13,7 +11,8 @@ const NewLocationInput = ({ onSubmit }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          onSubmit(input.value);
+          onSubmit({ city: input.value });
+          pinCity(input.value);
           input.value = '';
         }}
       >
@@ -23,13 +22,12 @@ const NewLocationInput = ({ onSubmit }) => {
           placeholder="Enter a City..."
         />
         <button
+          type="submit"
           className="add-city-button"
+          disabled={disabled}
         >
           Pin New City
         </button>
-        <Link to="/">
-          <h1>View Pinned Cities</h1>
-        </Link>
       </form>
     </div>
   );

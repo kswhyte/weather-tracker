@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NewLocationInput from '../components/NewLocationInput';
-import { fetchPinnedCityForecast } from '../actions/index';
+import { fetchForecast, pinCity } from '../actions/index';
 
 const mapStateToProps = (state) => {
   // return an object of redux store data
@@ -8,14 +8,9 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
-  // return an object of methods you'd like
-  // to dispatch as redux actions
-  return {
-    onSubmit: (cityName) => {
-      dispatch(fetchPinnedCityForecast(cityName));
-    },
-  };
+const mapDispatchToProps = {
+  onSubmit: fetchForecast,
+  pinCity,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewLocationInput);

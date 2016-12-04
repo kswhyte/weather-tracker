@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { isUndefined } from 'lodash';
 
-const receiveAPI = ({ endpoint, lat, lon, action }) => {
+const receiveAPI = ({ endpoint, city, lat, lon, action }) => {
   return dispatch =>
     fetch(`http://api.openweathermap.org/data/2.5/${endpoint}?${!isUndefined(city) ? ('q=' + city) : ''}${!isUndefined(lat) ? ('lat=' + lat + '&lon=' + lon) : ''}&units=imperial&APPID=9b829427a8de3cc61102432f7b62fd6d`) // eslint-disable-line
     .then(response => response.json())
@@ -21,22 +21,16 @@ export const fetchForecast = ({ lat, lon, city }) => {
   };
 };
 
-const receivePinnedCityAPI = ({ endpoint, cityName, action }) => {
-  return dispatch =>
-  fetch(`api.openweathermap.org/data/2.5/weather?q=${cityName}`)
-  .then(response => response.json())
-  .then(
-    json => dispatch({ type: action, json }),
-    err => dispatch({ type: `${action}_ERROR`, err }),
-  );
+export const pinCity = (city) => {
+  return {
+    type: 'PIN_CITY',
+    city,
+  };
 };
 
-export const fetchPinnedCityForecast = (cityName) => {
-  return (dispatch) => {
-    return Promise.all([
-      dispatch(receivePinnedCityAPI({ cityName, endpoint: 'weather', action: 'RECEIVE_WEATHER' })),
-      dispatch(receivePinnedCityAPI({ cityName, endpoint: 'forecast', action: 'RECEIVE_FORECAST' })),
-      dispatch(receivePinnedCityAPI({ cityName, endpoint: 'forecast/daily', action: 'RECEIVE_DAILY' })),
-    ]);
+export const removeCity = (city) => {
+  return {
+    type: 'REMOVE_CITY',
+    city,
   };
 };
