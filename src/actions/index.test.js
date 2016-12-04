@@ -4,7 +4,8 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
 
-import * as actions from './index';
+// import * as actions from './index';
+import { receiveAPI, RECEIVE_WEATHER } from './index';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -14,20 +15,23 @@ describe('actions', () => {
     nock.cleanAll();
   });
 
-  it('creates RECEIVE_WEATHER_SUCCESS when receiveAPI is done', () => {
+  it('creates RECEIVE_WEATHER when receiveAPI is done', () => {
     nock('http://www.example.com/')
     .get('./weather')
     .reply(200, {
       city: { description: ['snow'] },
     });
 
-    const expectedActions = [
-      { type: actions.RECEIVE_WEATHER_REQUEST },
-      { type: actions.RECEIVE_WEATHER_SUCCESS, city: { description: ['snow'] } },
-    ];
     const store = mockStore({ description: [] });
 
-    return store.dispatch(actions.receiveAPI())
+
+    const expectedActions = [
+      { type: RECEIVE_WEATHER },
+      { type: RECEIVE_WEATHER, city: { description: ['snow'] } },
+    ];
+
+
+    return store.dispatch(receiveAPI({ lat, lon, city }))
     .then(() => {
       expect(store.getActions()).toEqual(expectedActions)
     });

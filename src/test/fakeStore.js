@@ -6,5 +6,6 @@ export const fakeStore = (state) => {
     getState: () => {
       return { ...state };
     },
+    children: {},
   };
 };
