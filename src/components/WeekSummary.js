@@ -12,11 +12,11 @@ const WeekSummary = ({ data }) => {
     <div className="weather-card">
       <section className="extended-weather-card">
         <h3>{dateFormatted}</h3>
-        <h4>Description: {data.weather[0].description}</h4>
-        <h4>High: {highTemp}°F </h4>
-        <h4>Low: {lowTemp}°F</h4>
-        <h4>Humidity: {humidity}% </h4>
-        <h4>Wind Speed: {windSpeed} MPH</h4>
+        <h4 className="summary-data">Description: {data.weather[0].description}</h4>
+        <h4 className="summary-data">High: {highTemp}°F </h4>
+        <h4 className="summary-data">Low: {lowTemp}°F</h4>
+        <h4 className="summary-data">Humidity: {humidity}% </h4>
+        <h4 className="summary-data">Wind Speed: {windSpeed} MPH</h4>
       </section>
     </div>
   );

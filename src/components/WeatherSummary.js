@@ -3,10 +3,10 @@ import React from 'react';
 const WeatherSummary = ({ currentTemp, lowTemp, highTemp, mainWeather }) => {
   return (
     <div>
-      <h3> Current: {currentTemp}°F </h3>
-      <h3> Description: {mainWeather} </h3>
-      <h3> Low: {lowTemp}°F </h3>
-      <h3> High: {highTemp}°F </h3>
+      <h4 className="current"> Current: {currentTemp}°F </h4>
+      <h4 className="current"> Description: {mainWeather} </h4>
+      <h4 className="current"> Low: {lowTemp}°F </h4>
+      <h4 className="current"> High: {highTemp}°F </h4>
     </div>
   );
 };
