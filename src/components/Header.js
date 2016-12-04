@@ -5,30 +5,31 @@ import DropDown from './DropDown';
 
 class Header extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       hideDropDown: true,
-    }
+    };
   }
 
   render() {
     return (
       <div>
         <Link to="/settings">
-          <button>Settings</button>
+          <button className="settings-button">Settings</button>
         </Link>
         <Link to={`/weather/${this.props.city}`}>
           <h1> { this.props.city || 'Current City' } </h1>
         </Link>
         <button
+          className="dropdown-button"
           onClick={() =>
             this.setState({
-              hideDropDown: !this.state.hideDropDown
+              hideDropDown: !this.state.hideDropDown,
             })}
-          >
+        >
             DropDown
           </button>
-        {this.state.hideDropDown && (<DropDown pinnedCities={this.props.pinnedCities}/>)}
+        {this.state.hideDropDown && (<DropDown pinnedCities={this.props.pinnedCities} />)}
       </div>
     );
   }

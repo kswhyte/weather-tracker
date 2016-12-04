@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { isUndefined } from 'lodash';
 
+
 const receiveAPI = ({ endpoint, city, lat, lon, action }) => {
   return dispatch =>
     fetch(`http://api.openweathermap.org/data/2.5/${endpoint}?${!isUndefined(city) ? ('q=' + city) : ''}${!isUndefined(lat) ? ('lat=' + lat + '&lon=' + lon) : ''}&units=imperial&APPID=9b829427a8de3cc61102432f7b62fd6d`) // eslint-disable-line
