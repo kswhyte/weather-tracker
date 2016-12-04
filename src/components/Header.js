@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
+
+import DropDown from './DropDown';
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      hideDropDown: true,
+    };
+  }
+
   render() {
     return (
       <div>
-        <header className="main-header">
-          <div>
+        <Link to="/settings">
           <button className="settings-button">Settings</button>
-          </div>
-          <h1 className="location-name"> { this.props.city || 'City' } </h1>
-          <div>
-          <button className="dropdown">DropDown</button>
-          </div>
-      </header>
+        </Link>
+        <Link to={`/weather/${this.props.city}`}>
+          <h1> { this.props.city || 'Current City' } </h1>
+        </Link>
+        <button
+          className="dropdown-button"
+          onClick={() =>
+            this.setState({
+              hideDropDown: !this.state.hideDropDown,
+            })}
+        >
+            DropDown
+          </button>
+        {this.state.hideDropDown && (<DropDown pinnedCities={this.props.pinnedCities} />)}
       </div>
     );
   }

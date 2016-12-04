@@ -10,8 +10,8 @@ import App from './containers/AppContainer';
 const Routes = props => (
   <Router {...props}>
     <Route path="/" component={App}>
-      <IndexRedirect to="/currentweather" component={CurrentWeatherContainer} />
-      <Route path="/currentweather" component={CurrentWeatherContainer} />
+      <IndexRedirect to="/weather/currentLocation" component={CurrentWeatherContainer} />
+      <Route path="/weather/:city" component={CurrentWeatherContainer} />
       <Route path="/settings" component={SettingsContainer} />
       <Route path="/extendedforecast" component={ExtendedForecast} />
       <Route path="/fullday" component={FullDay} />
