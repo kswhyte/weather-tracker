@@ -7,7 +7,7 @@ const ThreeHourSummary = ({ data }) => {
   const windSpeed = Math.round(data.wind.speed);
 
   return (
-    <div>
+    <div className="three-hour weather-card">
       <h3>{moment.unix(data.dt).calendar()}</h3>
       <h4>Description: {data.weather[0].description}</h4>
       <h4>Temp: {mainTemp}°F</h4>

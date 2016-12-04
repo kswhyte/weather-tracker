@@ -1,3 +1,46 @@
+
+
+.main-header {
+  margin: auto;
+  display: flex;
+  padding: 10px;
+}
+
+button {
+  height: 30px;
+  text-align: center;
+}
+
+.settings-button {
+  margin-right: auto;
+  display: inline-block;
+}
+
+.location-name {
+  text-align: center;
+  display: inline-block;
+  padding: 2% 30%;
+}
+
+.dropdown {
+  margin-left: auto;
+  display: inline-block;
+}
+
+.weather-card {
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.fullday-button {
+}
+
+.extended {
+text-align: center;
+margin: auto;
+}
+
 h3 {
-  color: magenta; 
+  color: black;
 }

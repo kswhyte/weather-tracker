@@ -9,7 +9,7 @@ const WeekSummary = ({ data }) => {
   const windSpeed = Math.round(data.speed);
   const dateFormatted = moment.unix(data.dt).format('dddd')
   return (
-    <div>
+    <div className="extended-forecast weather-card">
 
       <h3>{dateFormatted}</h3>
       <h4>Description: {data.weather[0].description}</h4>
