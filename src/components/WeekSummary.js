@@ -3,10 +3,10 @@ import moment from 'moment';
 
 const WeekSummary = ({ data }) => {
 
-  let highTemp = Math.round(data.temp.max);
-  let lowTemp = Math.round(data.temp.min);
-  let humidity = Math.round(data.humidity);
-  let windSpeed = Math.round(data.speed);
+  const highTemp = Math.round(data.temp.max);
+  const lowTemp = Math.round(data.temp.min);
+  const humidity = Math.round(data.humidity);
+  const windSpeed = Math.round(data.speed);
 
   return (
     <div>
