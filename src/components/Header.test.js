@@ -14,12 +14,12 @@ describe('Header', () => {
     expect(wrapper.find('.dropdown-button')).to.have.length(1);
   });
 
-  it('should render a default title of "City" in the <h1> tag', () => {
-    const wrapper = shallow(
+  it('should render a default title of "Current City" in the <h1> tag', () => {
+    const wrapper = mount(
       <Header>
-        <h1>City</h1>
-      </Header>
+        <h1>Current City</h1>
+      </Header>,
     );
-    expect(wrapper.text()).to.contain('City');
+    expect(wrapper.text()).to.contain('Current City');
   });
 });

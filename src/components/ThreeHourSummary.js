@@ -9,10 +9,10 @@ const ThreeHourSummary = ({ data }) => {
   return (
     <div>
       <h3>{moment.unix(data.dt).calendar()}</h3>
-      <h4>Description: {data.weather[0].description}</h4>
-      <h4>Temp: {mainTemp}°F</h4>
-      <h4>Humidity: {humidity}%</h4>
-      <h4>Wind: {windSpeed} MPH </h4>
+      <h4 className="summary-data">Description: {data.weather[0].description}</h4>
+      <h4 className="summary-data">Temp: {mainTemp}°F</h4>
+      <h4 className="summary-data">Humidity: {humidity}%</h4>
+      <h4 className="summary-data">Wind: {windSpeed} MPH </h4>
     </div>
   );
 };

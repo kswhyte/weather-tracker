@@ -25,7 +25,10 @@ const Settings = ({ pinnedCities, removeCity }) => {
               {city}
             </Link>
             <button
-              onClick={() => removeCity(city)}>X</button>
+              className="button"
+              onClick={() => removeCity(city)}
+            >X
+            </button>
           </li>,
         )
         : <li>Add a city to the list below: </li>}
