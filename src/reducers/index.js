@@ -25,6 +25,7 @@ const App = (state = {}, action) => {
     case 'RECEIVE_DAILY':
       return {
         ...state,
+        fullWeek: take(action.json.list, 7),
       };
 
     case 'PIN_CITY':

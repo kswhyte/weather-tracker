@@ -48,12 +48,22 @@ class CurrentWeather extends Component {
     this.setState({
       hideExtended: !this.state.hideExtended,
     });
+    if (!this.state.hideExtended) {
+      this.setState({
+        hideFullDay: true,
+      })
+    }
   }
 
   toggleHideFullDay() {
     this.setState({
       hideFullDay: !this.state.hideFullDay,
     });
+    if (!this.state.hideFullDay) {
+      this.setState({
+        hideExtended: true,
+      })
+    }
   }
 
   render() {
@@ -68,7 +78,7 @@ class CurrentWeather extends Component {
         <button onClick={this.toggleHideFullDay}> Show Full Day Forecast </button>
         <button onClick={this.toggleHideExtended}> Show Extended Forecast </button>
         {!this.state.hideFullDay && (<FullDay fullDay={this.props.fullDay} />)}
-        {!this.state.hideExtended && (<ExtendedForecast />)}
+        {!this.state.hideExtended && (<ExtendedForecast fullWeek={this.props.fullWeek} />)}
       </div>
     );
   }
