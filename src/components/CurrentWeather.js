@@ -76,7 +76,9 @@ class CurrentWeather extends Component {
           highTemp={Math.round(this.props.tempMax)}
           mainWeather={this.props.mainWeather}
         />
+      <div className="fullday">
       <button className="fullday-button" onClick={this.toggleHideFullDay}> Show Full Day Forecast </button>
+      </div>
         </div>
         <div className="extended">
         <button className="extended-button" onClick={this.toggleHideExtended}> Show Extended Forecast </button>
