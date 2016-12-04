@@ -10,6 +10,7 @@ class CurrentWeather extends Component {
     this.state = {
       hideExtended: true,
       hideFullDay: true,
+      currentCity: '',
     };
     this.toggleHideExtended = this.toggleHideExtended.bind(this);
     this.toggleHideFullDay = this.toggleHideFullDay.bind(this);
@@ -25,7 +26,23 @@ class CurrentWeather extends Component {
     } else {
       fetchForecast({ city: this.props.params.city });
     }
+    this.setState({ currentCity: this.props.params.city });
   }
+
+  // componentWillReceiveProps() {
+  //   const { fetchForecast } = this.props;
+  //   console.log('city', this.props.params.city);
+  //   if (this.props.params.city !== this.state.currentCity) {
+  //     if (this.props.params.city === 'currentLocation') {
+  //       navigator.geolocation.getCurrentPosition((position) => {
+  //         fetchForecast({ lat: position.coords.latitude, lon: position.coords.longitude });
+  //       });
+  //     } else {
+  //       fetchForecast({ city: this.props.params.city });
+  //     }
+  //     this.setState({ currentCity: this.props.params.city });
+  //   }
+  // }
 
   toggleHideExtended() {
     this.setState({

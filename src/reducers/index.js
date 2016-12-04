@@ -1,9 +1,8 @@
-import { take } from 'lodash';
+import { pull, take, flattenDeep } from 'lodash';
 
 const App = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_FORECAST':
-      console.log('FORECAST: ', action.json);
       return {
         ...state,
         fullDay: take(action.json.list, 8),
@@ -24,11 +23,23 @@ const App = (state = {}, action) => {
       };
 
     case 'RECEIVE_DAILY':
-      console.log('DAILY: ', action.json);
       return {
         ...state,
-        fullWeek: take(action.json.list, 7)
+        fullWeek: take(action.json.list, 7),
       };
+
+    case 'PIN_CITY':
+      return {
+        ...state,
+        pinnedCities: flattenDeep([state.pinnedCities && [...state.pinnedCities], action.city]),
+      };
+
+    case 'REMOVE_CITY':
+      return {
+        ...state,
+        pinnedCities: pull([...state.pinnedCities], action.city),
+      };
+
     default:
       return state;
   }
