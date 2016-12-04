@@ -19,12 +19,22 @@ class CurrentWeather extends Component {
     this.setState({
       hideExtended: !this.state.hideExtended,
     });
+    if (!this.state.hideExtended) {
+      this.setState({
+        hideFullDay: true,
+      })
+    }
   }
 
   toggleHideFullDay() {
     this.setState({
       hideFullDay: !this.state.hideFullDay,
     });
+    if (!this.state.hideFullDay) {
+      this.setState({
+        hideFullDay: true,
+      })
+    }
   }
 
   render() {
