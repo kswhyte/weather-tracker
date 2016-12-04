@@ -3,14 +3,6 @@ import HeaderContainer from '../containers/HeaderContainer';
 import NewLocationInputContainer from '../containers/NewLocationInputContainer';
 
 class App extends Component {
-
-  componentWillMount() {
-    const { fetchForecast } = this.props;
-    navigator.geolocation.getCurrentPosition((position) => {
-      fetchForecast(position.coords.latitude, position.coords.longitude);
-    });
-  }
-
   render() {
     return (
       <div>
