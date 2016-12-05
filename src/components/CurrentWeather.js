@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import ExtendedForecast from './ExtendedForecast';
 import FullDay from './FullDay';
@@ -36,10 +36,8 @@ class CurrentWeather extends Component {
     const currentParamCity = this.props.params.city ? this.props.params.city.toLowerCase() : '';
     const renderedCity = this.props.city ? this.props.city.toLowerCase() : '';
 
-    if (currentParamCity !== 'currentlocation') {
-      if (currentParamCity !== renderedCity || nextPropsParamCity !== currentParamCity) {
-        fetchForecast({ city: this.props.params.city });
-      }
+    if (nextPropsParamCity !== currentParamCity) {
+      fetchForecast({ city: nextPropsParamCity });
     }
   }
 
@@ -95,5 +93,15 @@ class CurrentWeather extends Component {
     );
   }
 }
+
+CurrentWeather.propTypes = {
+  temp: PropTypes.int,
+  tempMin: PropTypes.int,
+  tempMax: PropTypes.int,
+  mainWeather: PropTypes.string,
+  fullDay: PropTypes.string,
+  fullWeek: PropTypes.string,
+  city: PropTypes.string,
+};
 
 module.exports = CurrentWeather;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const WeatherSummary = ({ currentTemp, lowTemp, highTemp, mainWeather, city }) => {
   return (
@@ -11,5 +11,12 @@ const WeatherSummary = ({ currentTemp, lowTemp, highTemp, mainWeather, city }) =
   );
 };
 
+WeatherSummary.propTypes = {
+  currentTemp: PropTypes.int,
+  lowTemp: PropTypes.int,
+  highTemp: PropTypes.int,
+  mainWeather: PropTypes.string,
+  city: PropTypes.string,
+};
 
 module.exports = WeatherSummary;
