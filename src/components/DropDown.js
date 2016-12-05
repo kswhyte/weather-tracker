@@ -14,8 +14,18 @@ const DropDown = ({ pinnedCities }) => {
             {city}
           </Link>
         </li>,
-      )
+        )
       : null}
+      <li>
+        <Link to={'/weather/currentLocation'}>
+          Current Location
+        </Link>
+      </li>
+      <li>
+        <Link to={'/settings'}>
+          +
+        </Link>
+      </li>
     </ul>
   );
 };
