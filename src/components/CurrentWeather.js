@@ -17,7 +17,7 @@ class CurrentWeather extends Component {
 
   componentWillMount() {
     const { fetchForecast, loadingAction } = this.props;
-    const currentParamCity = this.props.params.city ? this.props.params.city.toLowerCase() : '';
+    const currentParamCity = this.props.params ? this.props.params.city.toLowerCase() : '';
 
     if (currentParamCity === 'currentlocation') {
       loadingAction();

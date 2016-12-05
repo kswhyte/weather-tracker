@@ -8,7 +8,7 @@ describe('WeekSummary', () => {
     const wrapper = shallow(
       <WeekSummary />,
     );
-    expect(wrapper.find('.summary-data')).to.have.length(4);
+    expect(wrapper.find('.summary-data')).to.have.length(5);
   });
 
   it('should mount without props', () => {
