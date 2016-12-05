@@ -43,7 +43,7 @@
     "sinon": "^1.17.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "freact-scripts start",
     "build": "react-scripts build",
     "test": "jest",
     "test:watch": "npm test -- --watch",
