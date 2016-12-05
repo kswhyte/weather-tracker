@@ -1,23 +1,24 @@
+/* eslint-disable */ 
 import { Provider } from 'react-redux';
 import React from 'react';
 import { mount } from 'enzyme';
 import { fakeStore } from '../test/fakeStore';
-import DropDown from '../components/DropDown';
+import CurrentWeather from '../components/CurrentWeather';
 
-describe('DropDownContainer Container', () => {
+describe('Current Weather Container', () => {
   function setup() {
     const store = fakeStore({});
     const wrapper = mount(
       <Provider store={store}>
-        <DropDown />
+        <CurrentWeather />
       </Provider>,
     );
-    const Component = wrapper.find(DropDown);
+    const Component = wrapper.find(CurrentWeather);
     return {
       Component,
     };
   }
-  it('should render DropDownContainer', () => {
+  it('should render Current Weather component', () => {
     const { Component } = setup();
     expect(Component.length).toBeTruthy();
   });

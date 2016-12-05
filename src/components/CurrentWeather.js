@@ -33,7 +33,6 @@ class CurrentWeather extends Component {
     const { fetchForecast } = this.props;
     const nextPropsParamCity = nextProps.params.city ? nextProps.params.city.toLowerCase() : '';
     const currentParamCity = this.props.params.city ? this.props.params.city.toLowerCase() : '';
-    const renderedCity = this.props.city ? this.props.city.toLowerCase() : '';
 
     if (nextPropsParamCity !== currentParamCity) {
       fetchForecast({ city: nextPropsParamCity });
@@ -65,16 +64,29 @@ class CurrentWeather extends Component {
   render() {
     return (
       <div>
-        <WeatherSummary
-          city={this.props.city}
-          currentTemp={Math.round(this.props.temp)}
-          lowTemp={Math.round(this.props.tempMin)}
-          highTemp={Math.round(this.props.tempMax)}
-          mainWeather={this.props.mainWeather}
-          loading={this.props.loading}
-        />
-        <button onClick={this.toggleHideFullDay}> Show Full Day Forecast </button>
-        <button onClick={this.toggleHideExtended}> Show Extended Forecast </button>
+        <div className="current weather-card">
+          <WeatherSummary
+            city={this.props.city}
+            currentTemp={Math.round(this.props.temp)}
+            lowTemp={Math.round(this.props.tempMin)}
+            highTemp={Math.round(this.props.tempMax)}
+            mainWeather={this.props.mainWeather}
+            loading={this.props.loading}
+          />
+          <div className="fullday">
+            <button
+              className="fullday-button"
+              onClick={this.toggleHideFullDay}
+            >Show Full Day Forecast </button>
+          </div>
+        </div>
+        <div className="extended">
+          <button
+            className="extended-button"
+            onClick={this.toggleHideExtended}
+          > Show Extended Forecast
+          </button>
+        </div>
         {!this.state.hideFullDay && (<FullDay fullDay={this.props.fullDay} />)}
         {!this.state.hideExtended && (<ExtendedForecast fullWeek={this.props.fullWeek} />)}
       </div>
@@ -83,13 +95,12 @@ class CurrentWeather extends Component {
 }
 
 CurrentWeather.propTypes = {
-  temp: PropTypes.int,
-  tempMin: PropTypes.int,
-  tempMax: PropTypes.int,
+  temp: PropTypes.number,
+  tempMin: PropTypes.number,
+  tempMax: PropTypes.number,
   mainWeather: PropTypes.string,
-  fullDay: PropTypes.string,
-  fullWeek: PropTypes.string,
   city: PropTypes.string,
+  fetchForecast: PropTypes.func,
 };
 
 module.exports = CurrentWeather;

@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
@@ -9,7 +10,7 @@ describe('Header', () => {
     expect(wrapper.find('.settings-button')).to.have.length(1);
   });
 
-  it('should render a Settings Button', () => {
+  it('should render a DropDown Button', () => {
     const wrapper = shallow(<Header />);
     expect(wrapper.find('.dropdown-button')).to.have.length(1);
   });

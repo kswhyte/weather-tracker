@@ -13,7 +13,7 @@ const Settings = ({ pinnedCities, removeCity }) => {
     disabled = pinnedCities.length >= 3 ? 'disabled' : '';
   }
   return (
-    <div>
+    <div className="settings-menu">
       <h1 className="pinned-cities-title">Pinned Cities:</h1>
       <ul className="settings-city-name">
         {pinnedCities ?
@@ -23,7 +23,7 @@ const Settings = ({ pinnedCities, removeCity }) => {
               {city}
             </Link>
             <button
-              className="button"
+              className="delete-button"
               onClick={() => removeCity(city)}
             >X
             </button>
