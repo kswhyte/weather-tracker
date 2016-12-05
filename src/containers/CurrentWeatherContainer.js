@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import CurrentWeather from '../components/CurrentWeather';
-import { fetchForecast } from '../actions/index';
+import { fetchForecast, loadingAction } from '../actions/index';
 
 const mapStateToProps = (state) => {
-  const { temp, tempMin, tempMax, mainWeather, fullDay, fullWeek, city } = state.weatherApp;
+  const { temp, tempMin, tempMax, mainWeather,
+          fullDay, fullWeek, city, loading } = state.weatherApp;
   return {
     city,
     temp,
@@ -12,11 +13,13 @@ const mapStateToProps = (state) => {
     mainWeather,
     fullDay,
     fullWeek,
+    loading,
   };
 };
 
-const mapDispatchToProps = ({
+const mapDispatchToProps = {
   fetchForecast,
-});
+  loadingAction,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentWeather);
