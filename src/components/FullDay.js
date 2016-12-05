@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ThreeHourSummary from './ThreeHourSummary';
 
 const FullDay = ({ fullDay }) => {
@@ -7,6 +7,10 @@ const FullDay = ({ fullDay }) => {
       {fullDay.map((d, i) => <ThreeHourSummary data={d} key={i} />)}
     </div>
   );
+};
+
+FullDay.propTypes = {
+  fullDay: PropTypes.string,
 };
 
 module.exports = FullDay;

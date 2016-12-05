@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import moment from 'moment';
 
 const ThreeHourSummary = ({ data }) => {
@@ -17,6 +17,10 @@ const ThreeHourSummary = ({ data }) => {
       <h4 className="summary-data">Wind: {windSpeed} MPH </h4>
     </div>
   );
+};
+
+ThreeHourSummary.propTypes = {
+  data: PropTypes.obj,
 };
 
 module.exports = ThreeHourSummary;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import DropDown from './DropDown';
@@ -34,5 +34,10 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  city: PropTypes.string,
+  pinnedCities: PropTypes.func,
+};
 
 module.exports = Header;

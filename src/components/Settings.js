@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { pull, isUndefined } from 'lodash';
 import { Link } from 'react-router';
 
@@ -34,6 +34,11 @@ const Settings = ({ pinnedCities, removeCity }) => {
       <NewLocationInputContainer disabled={disabled} />
     </div>
   );
+};
+
+Settings.propTypes = {
+  pinnedCities: PropTypes.arr,
+  removeCity: PropTypes.func,
 };
 
 module.exports = Settings;

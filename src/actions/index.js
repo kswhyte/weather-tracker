@@ -3,6 +3,7 @@ import { isUndefined } from 'lodash';
 
 
 const receiveAPI = ({ endpoint, city, lat, lon, action }) => {
+  console.log(`${endpoint} fetch made`);
   const cityZip = parseInt(city) ? `zip=${parseInt(city)}` : `q=${city}`; // eslint-disable-line
   return dispatch =>
     fetch(`http://api.openweathermap.org/data/2.5/${endpoint}?${!isUndefined(city) ? (cityZip) : ''}${!isUndefined(lat) ? ('lat=' + lat + '&lon=' + lon) : ''}&units=imperial&APPID=9b829427a8de3cc61102432f7b62fd6d`) // eslint-disable-line
@@ -19,7 +20,8 @@ export const fetchForecast = ({ lat, lon, city }) => {
       dispatch(receiveAPI({ lat, lon, city, endpoint: 'weather', action: 'RECEIVE_WEATHER' })),
       dispatch(receiveAPI({ lat, lon, city, endpoint: 'forecast', action: 'RECEIVE_FORECAST' })),
       dispatch(receiveAPI({ lat, lon, city, endpoint: 'forecast/daily', action: 'RECEIVE_DAILY' })),
-    ]);
+    ])
+    .catch(error => (dispatch({ type: 'ERROR', error })));
   };
 };
 
