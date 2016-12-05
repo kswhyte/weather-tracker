@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import ExtendedForecast from './ExtendedForecast';
 import FullDay from './FullDay';
@@ -81,5 +81,15 @@ class CurrentWeather extends Component {
     );
   }
 }
+
+CurrentWeather.propTypes = {
+  temp: PropTypes.int,
+  tempMin: PropTypes.int,
+  tempMax: PropTypes.int,
+  mainWeather: PropTypes.string,
+  fullDay: PropTypes.string,
+  fullWeek: PropTypes.string,
+  city: PropTypes.string,
+};
 
 module.exports = CurrentWeather;
