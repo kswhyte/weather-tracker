@@ -16,15 +16,16 @@ class CurrentWeather extends Component {
   }
 
   componentWillMount() {
-    const { fetchForecast } = this.props;
-    if (this.props.params) {
-      if (this.props.params.city === 'currentLocation') {
-        navigator.geolocation.getCurrentPosition((position) => {
-          fetchForecast({ lat: position.coords.latitude, lon: position.coords.longitude });
-        });
-      } else {
-        fetchForecast({ city: this.props.params.city });
-      }
+    const { fetchForecast, loadingAction } = this.props;
+    const currentParamCity = this.props.params.city ? this.props.params.city.toLowerCase() : '';
+
+    if (currentParamCity === 'currentlocation') {
+      loadingAction();
+      navigator.geolocation.getCurrentPosition((position) => {
+        fetchForecast({ lat: position.coords.latitude, lon: position.coords.longitude });
+      });
+    } else {
+      fetchForecast({ city: this.props.params.city });
     }
   }
 

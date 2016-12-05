@@ -39,3 +39,9 @@ export const removeCity = (city) => {
     city,
   };
 };
+
+export const loadingAction = () => {
+  return {
+    type: 'LOADING',
+  };
+};
