@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import { Provider } from 'react-redux';
 import React from 'react';
 import { mount } from 'enzyme';

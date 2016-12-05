@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import { Provider } from 'react-redux';
 import React from 'react';
 import { mount } from 'enzyme';
@@ -17,6 +18,7 @@ describe('HeaderContainer Container', () => {
       Component,
     };
   }
+
   it('should render HeaderContainer', () => {
     const { Component } = setup();
     expect(Component.length).toBeTruthy();

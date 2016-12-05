@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import reducer from './index';
 
 const mockData = {

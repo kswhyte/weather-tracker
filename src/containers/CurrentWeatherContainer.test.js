@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import { Provider } from 'react-redux';
 import React from 'react';
 import { mount } from 'enzyme';
@@ -17,7 +18,7 @@ describe('Current Weather Container', () => {
       Component,
     };
   }
-  it('should render Current Weather container', () => {
+  it('should render Current Weather component', () => {
     const { Component } = setup();
     expect(Component.length).toBeTruthy();
   });
