@@ -30,12 +30,19 @@ class CurrentWeather extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { fetchForecast } = this.props;
+    const { fetchForecast, loadingAction } = this.props;
     const nextPropsParamCity = nextProps.params.city ? nextProps.params.city.toLowerCase() : '';
     const currentParamCity = this.props.params.city ? this.props.params.city.toLowerCase() : '';
 
     if (nextPropsParamCity !== currentParamCity) {
-      fetchForecast({ city: nextPropsParamCity });
+      if (nextPropsParamCity === 'currentlocation') {
+        loadingAction();
+        navigator.geolocation.getCurrentPosition((position) => {
+          fetchForecast({ lat: position.coords.latitude, lon: position.coords.longitude });
+        });
+      } else {
+        fetchForecast({ city: nextPropsParamCity });
+      }
     }
   }
 
