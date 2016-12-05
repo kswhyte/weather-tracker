@@ -2,22 +2,22 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import { mount } from 'enzyme';
 import { fakeStore } from '../test/fakeStore';
-import DropDown from '../components/DropDown';
+import Settings from '../components/Settings';
 
-describe('DropDownContainer Container', () => {
+describe('Settings Container', () => {
   function setup() {
     const store = fakeStore({});
     const wrapper = mount(
       <Provider store={store}>
-        <DropDown />
+        <Settings />
       </Provider>,
     );
-    const Component = wrapper.find(DropDown);
+    const Component = wrapper.find(Settings);
     return {
       Component,
     };
   }
-  it('should render DropDownContainer', () => {
+  it('should render Settings container', () => {
     const { Component } = setup();
     expect(Component.length).toBeTruthy();
   });
