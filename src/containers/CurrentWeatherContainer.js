@@ -3,7 +3,8 @@ import CurrentWeather from '../components/CurrentWeather';
 import { fetchForecast } from '../actions/index';
 
 const mapStateToProps = (state) => {
-  const { temp, tempMin, tempMax, mainWeather, fullDay, fullWeek, city } = state.weatherApp;
+  const { temp, tempMin, tempMax, mainWeather,
+          fullDay, fullWeek, city, loading } = state.weatherApp;
   return {
     city,
     temp,
@@ -12,6 +13,7 @@ const mapStateToProps = (state) => {
     mainWeather,
     fullDay,
     fullWeek,
+    loading,
   };
 };
 

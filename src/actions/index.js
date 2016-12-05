@@ -16,6 +16,7 @@ const receiveAPI = ({ endpoint, city, lat, lon, action }) => {
 
 export const fetchForecast = ({ lat, lon, city }) => {
   return (dispatch) => {
+    dispatch({ type: 'LOADING' });
     return Promise.all([
       dispatch(receiveAPI({ lat, lon, city, endpoint: 'weather', action: 'RECEIVE_WEATHER' })),
       dispatch(receiveAPI({ lat, lon, city, endpoint: 'forecast', action: 'RECEIVE_FORECAST' })),

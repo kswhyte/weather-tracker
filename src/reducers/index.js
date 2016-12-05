@@ -20,6 +20,7 @@ const App = (state = {}, action) => {
         description: action.json.weather[0].description,
         icon: action.json.weather[0].icon,
         wind: action.json.wind.speed,
+        loading: false,
       };
 
     case 'RECEIVE_DAILY':
@@ -29,21 +30,17 @@ const App = (state = {}, action) => {
       };
 
     case 'ERROR':
-      console.log('EEEEEEEEEEEERRRRRRRRRROOOOOOOOOOORRRRRRR!!!!!!!!!!');
-      console.log(action.error);
       return {
         ...state,
         fullWeek: [],
         fullDay: [],
-        city: '',
-        temp: '',
-        tempMin: '',
-        tempMax: '',
-        humidity: '',
         mainWeather: '',
-        description: '',
-        icon: '',
-        wind: '',
+      };
+
+    case 'LOADING':
+      return {
+        ...state,
+        loading: true,
       };
 
     case 'PIN_CITY':

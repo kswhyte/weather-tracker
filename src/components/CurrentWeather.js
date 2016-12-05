@@ -10,8 +10,6 @@ class CurrentWeather extends Component {
     this.state = {
       hideExtended: true,
       hideFullDay: true,
-
-      currentCity: '',
     };
     this.toggleHideExtended = this.toggleHideExtended.bind(this);
     this.toggleHideFullDay = this.toggleHideFullDay.bind(this);
@@ -72,6 +70,7 @@ class CurrentWeather extends Component {
           lowTemp={Math.round(this.props.tempMin)}
           highTemp={Math.round(this.props.tempMax)}
           mainWeather={this.props.mainWeather}
+          loading={this.props.loading}
         />
         <button onClick={this.toggleHideFullDay}> Show Full Day Forecast </button>
         <button onClick={this.toggleHideExtended}> Show Extended Forecast </button>
