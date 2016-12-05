@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { pull, isUndefined } from 'lodash';
+import React from 'react';
+import { pull } from 'lodash';
 import { Link } from 'react-router';
 
 const DropDown = ({ pinnedCities }) => {

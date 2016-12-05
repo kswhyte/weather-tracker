@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { pull, isUndefined } from 'lodash';
 import { Link } from 'react-router';
 
@@ -6,7 +6,6 @@ import NewLocationInputContainer from '../containers/NewLocationInputContainer';
 
 const Settings = ({ pinnedCities, removeCity }) => {
   pinnedCities = pull(pinnedCities, undefined); //eslint-disable-line
-  let input;
 
   let disabled = '';
 

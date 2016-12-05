@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import HeaderContainer from '../containers/HeaderContainer';
-import NewLocationInputContainer from '../containers/NewLocationInputContainer';
 
 class App extends Component {
   render() {
