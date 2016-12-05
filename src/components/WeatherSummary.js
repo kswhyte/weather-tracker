@@ -16,15 +16,9 @@ const WeatherSummary = ({ currentTemp, lowTemp, highTemp, mainWeather, city }) =
 };
 
 WeatherSummary.propTypes = {
-<<<<<<< HEAD
-  currentTemp: PropTypes.int,
-  lowTemp: PropTypes.int,
-  highTemp: PropTypes.int,
-=======
   currentTemp: PropTypes.number,
   lowTemp: PropTypes.number,
   highTemp: PropTypes.number,
->>>>>>> master
   mainWeather: PropTypes.string,
   city: PropTypes.string,
 };
