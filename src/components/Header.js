@@ -37,7 +37,7 @@ class Header extends Component {
 
 Header.propTypes = {
   city: PropTypes.string,
-  pinnedCities: PropTypes.arr,
+  pinnedCities: PropTypes.func,
 };
 
 module.exports = Header;
