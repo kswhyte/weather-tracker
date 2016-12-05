@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const NewLocationInput = ({ onSubmit, pinCity, disabled }) => {
   let input;
-  // focus() {
-  //   this.textInput.focus();
-  // }
+
   return (
     <div>
       <form
@@ -30,6 +28,12 @@ const NewLocationInput = ({ onSubmit, pinCity, disabled }) => {
       </form>
     </div>
   );
+};
+
+NewLocationInput.propTypes = {
+  onSubmit: PropTypes.func,
+  pinCity: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 module.exports = NewLocationInput;
