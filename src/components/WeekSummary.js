@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 
 const WeekSummary = ({ data }) => {
-
   const highTemp = Math.round(data.temp.max);
   const lowTemp = Math.round(data.temp.min);
   const humidity = Math.round(data.humidity);
