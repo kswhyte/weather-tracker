@@ -1,11 +1,17 @@
+/* eslint-disable */ 
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
 
-// import * as actions from './index';
-import { receiveAPI, RECEIVE_WEATHER } from './index';
+import {
+  receiveAPI, RECEIVE_WEATHER,
+  fetchForecast, RECEIVE_FORECAST,
+  pinCity, PIN_CITY,
+  removeCity, REMOVE_CITY,
+} from './index';
+
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -15,25 +21,43 @@ describe('actions', () => {
     nock.cleanAll();
   });
 
-  it('creates RECEIVE_WEATHER when receiveAPI is done', () => {
-    nock('http://www.example.com/')
-    .get('./weather')
-    .reply(200, {
-      city: { description: ['snow'] },
-    });
+  function success() {
+    return {
+      type: 'RECEIVE_WEATHER',
+    };
+  }
 
-    const store = mockStore({ description: [] });
+  function fetchData() {
+    return dispatch => {
+      return fetch('http://api.openweathermap.org')
+        .then(() => dispatch(success()));
+    };
+  }
 
-
-    const expectedActions = [
-      { type: RECEIVE_WEATHER },
-      { type: RECEIVE_WEATHER, city: { description: ['snow'] } },
-    ];
-
-
-    return store.dispatch(receiveAPI({ lat, lon, city }))
+  it('should execute fetch data', () => {
+    const store = mockStore({});
+    return store.dispatch(fetchData())
     .then(() => {
-      expect(store.getActions()).toEqual(expectedActions)
+      const actions = store.getActions();
+      expect(actions[0]).toEqual(success())
     });
+  });
+
+  it('should create an action to pin a city', () => {
+    const city = 'miami';
+    const expectedAction = {
+      type: 'PIN_CITY',
+      city,
+    };
+  expect(pinCity(city)).toEqual(expectedAction);
+  });
+
+  it('should create an action to remove a city', () => {
+    const city = 'raleigh';
+    const expectedAction = {
+      type: 'REMOVE_CITY',
+      city,
+    };
+  expect(removeCity(city)).toEqual(expectedAction);
   });
 });

@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
@@ -19,7 +20,7 @@ describe('Settings', () => {
       <Settings
         removeCity={removeCity}
         pinnedCities={['denver']}
-        />,
+      />,
     );
     wrapper.find('button').simulate('click');
     expect(removeCity.calledOnce).toBe(true);
