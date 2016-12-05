@@ -1,4 +1,4 @@
-/* eslint-disable */ 
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
@@ -6,7 +6,6 @@ import sinon from 'sinon';
 import Settings from './Settings';
 import { Provider } from 'react-redux';
 import { fakeStore } from '../test/fakeStore';
-
 
 describe('Settings', () => {
   it('should mount without props', () => {

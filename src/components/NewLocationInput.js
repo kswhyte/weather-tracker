@@ -33,7 +33,7 @@ const NewLocationInput = ({ onSubmit, pinCity, disabled }) => {
 NewLocationInput.propTypes = {
   onSubmit: PropTypes.func,
   pinCity: PropTypes.func,
-  disabled: PropTypes.bool,
+  disabled: PropTypes.string,
 };
 
 module.exports = NewLocationInput;

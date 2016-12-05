@@ -7,7 +7,7 @@ class Header extends Component {
   constructor() {
     super();
     this.state = {
-      hideDropDown: true,
+      hideDropDown: false,
     };
   }
 
@@ -37,7 +37,7 @@ class Header extends Component {
 
 Header.propTypes = {
   city: PropTypes.string,
-  pinnedCities: PropTypes.func,
+  pinnedCities: React.PropTypes.func,
 };
 
 module.exports = Header;
