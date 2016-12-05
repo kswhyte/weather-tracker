@@ -9,15 +9,9 @@ const ThreeHourSummary = ({ data }) => {
   const time = data ? data.dt : 'time';
 
   return (
-<<<<<<< HEAD
     <div className="three-hour weather-card">
-      <h3>{moment.unix(data.dt).calendar()}</h3>
-      <h4 className="summary-data">Description: {data.weather[0].description}</h4>
-=======
-    <div>
       <h3>{moment.unix(time).calendar()}</h3>
       <h4 className="summary-data">Description: {description}</h4>
->>>>>>> master
       <h4 className="summary-data">Temp: {mainTemp}°F</h4>
       <h4 className="summary-data">Humidity: {humidity}%</h4>
       <h4 className="summary-data">Wind: {windSpeed} MPH </h4>
