@@ -9,7 +9,7 @@ const ThreeHourSummary = ({ data }) => {
   const time = data ? data.dt : 'time';
 
   return (
-    <div>
+    <div className="three-hour weather-card">
       <h3>{moment.unix(time).calendar()}</h3>
       <h4 className="summary-data">Description: {description}</h4>
       <h4 className="summary-data">Temp: {mainTemp}°F</h4>

@@ -13,12 +13,12 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main-header">
         <Link to="/settings">
           <button className="settings-button">Settings</button>
         </Link>
         <Link to={`/weather/${this.props.city}`}>
-          <h1> { this.props.city || 'Current City' } </h1>
+          <h1 className="location-name"> { this.props.city || 'Current City' } </h1>
         </Link>
         <button
           className="dropdown-button"
@@ -27,7 +27,7 @@ class Header extends Component {
               hideDropDown: !this.state.hideDropDown,
             })}
         >
-            DropDown
+            Pinned Cities
           </button>
         {this.state.hideDropDown && (<DropDown pinnedCities={this.props.pinnedCities} />)}
       </div>

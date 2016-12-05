@@ -64,15 +64,27 @@ class CurrentWeather extends Component {
   render() {
     return (
       <div>
-        <WeatherSummary
-          city={this.props.city}
-          currentTemp={Math.round(this.props.temp)}
-          lowTemp={Math.round(this.props.tempMin)}
-          highTemp={Math.round(this.props.tempMax)}
-          mainWeather={this.props.mainWeather}
-        />
-        <button onClick={this.toggleHideFullDay}> Show Full Day Forecast </button>
-        <button onClick={this.toggleHideExtended}> Show Extended Forecast </button>
+        <div className="current weather-card">
+          <WeatherSummary
+            currentTemp={Math.round(this.props.temp)}
+            lowTemp={Math.round(this.props.tempMin)}
+            highTemp={Math.round(this.props.tempMax)}
+            mainWeather={this.props.mainWeather}
+          />
+          <div className="fullday">
+            <button
+              className="fullday-button"
+              onClick={this.toggleHideFullDay}
+            >Show Full Day Forecast </button>
+          </div>
+        </div>
+        <div className="extended">
+          <button
+            className="extended-button"
+            onClick={this.toggleHideExtended}
+          > Show Extended Forecast
+          </button>
+        </div>
         {!this.state.hideFullDay && (<FullDay fullDay={this.props.fullDay} />)}
         {!this.state.hideExtended && (<ExtendedForecast fullWeek={this.props.fullWeek} />)}
       </div>
