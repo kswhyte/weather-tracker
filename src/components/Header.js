@@ -27,7 +27,7 @@ class Header extends Component {
               hideDropDown: !this.state.hideDropDown,
             })}
         >
-            DropDown
+            Pinned Cities
           </button>
         {this.state.hideDropDown && (<DropDown pinnedCities={this.props.pinnedCities} />)}
       </div>
