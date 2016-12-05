@@ -28,6 +28,24 @@ const App = (state = {}, action) => {
         fullWeek: take(action.json.list, 7),
       };
 
+    case 'ERROR':
+      console.log('EEEEEEEEEEEERRRRRRRRRROOOOOOOOOOORRRRRRR!!!!!!!!!!');
+      console.log(action.error);
+      return {
+        ...state,
+        fullWeek: [],
+        fullDay: [],
+        city: '',
+        temp: '',
+        tempMin: '',
+        tempMax: '',
+        humidity: '',
+        mainWeather: '',
+        description: '',
+        icon: '',
+        wind: '',
+      };
+
     case 'PIN_CITY':
       return {
         ...state,
