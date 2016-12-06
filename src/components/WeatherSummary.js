@@ -5,11 +5,11 @@ const WeatherSummary = ({ currentTemp, lowTemp, highTemp, mainWeather, city, loa
     <div>
       {mainWeather === '' ? <h2>There was an error :(</h2> :
       <div>
-        <h2> Location: {loading ? 'loading...' : city} </h2>
-        <h3> Current: {loading ? 'loading...' : currentTemp}°F </h3>
-        <h3> Description: {loading ? 'loading...' : mainWeather} </h3>
-        <h3> Low: {loading ? 'loading...' : lowTemp}°F </h3>
-        <h3> High: {loading ? 'loading...' : highTemp}°F </h3>
+        <h2> Location: <span className="span">{loading ? 'loading...' : city}</span></h2>
+        <h3> Current: <span className="span">{loading ? 'loading...' : currentTemp}°F</span></h3>
+        <h3> Description: <span className="span">{loading ? 'loading...' : mainWeather}</span></h3>
+        <h3> Low: <span className="span">{loading ? 'loading...' : lowTemp}°F</span></h3>
+        <h3> High: <span className="span">{loading ? 'loading...' : highTemp}°F</span></h3>
       </div>}
     </div>
   );

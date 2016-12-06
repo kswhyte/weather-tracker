@@ -80,12 +80,14 @@ class CurrentWeather extends Component {
             mainWeather={this.props.mainWeather}
             loading={this.props.loading}
           />
-          <div className="fullday">
-            <button
-              className="fullday-button"
-              onClick={this.toggleHideFullDay}
-            >Show Full Day Forecast </button>
-          </div>
+        </div>
+        <div className="fullday">
+          <button
+            className="fullday-button"
+            onClick={this.toggleHideFullDay}
+          >
+            Show Full Day Forecast
+          </button>
         </div>
         <div className="extended">
           <button

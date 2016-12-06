@@ -14,6 +14,7 @@ const NewLocationInput = ({ onSubmit, pinCity, disabled }) => {
         }}
       >
         <input
+          className="input-city-field"
           ref={(node) => { input = node; }}
           type="text"
           placeholder="Enter a City..."
