@@ -4,13 +4,13 @@ const WeatherSummary = ({ currentTemp, lowTemp, highTemp, mainWeather, city, loa
   return (
     <div>
       {mainWeather === '' ? <h2>There was an error :(</h2> :
-      <div>
-        <h2> Location: {loading ? 'loading...' : city} </h2>
-        <h3> Current: {loading ? 'loading...' : currentTemp}°F </h3>
-        <h3> Description: {loading ? 'loading...' : mainWeather} </h3>
-        <h3> Low: {loading ? 'loading...' : lowTemp}°F </h3>
-        <h3> High: {loading ? 'loading...' : highTemp}°F </h3>
-      </div>}
+      <section>
+        <h2> Location: <span className="span">{loading ? 'Loading...' : city}</span></h2>
+        <h3> Temperature: <span className="span">{loading ? 'Loading...' : currentTemp}°F</span></h3>
+        <h3> Currently: <span className="span">{loading ? 'Loading...' : mainWeather}</span></h3>
+        <h3> Low: <span className="span">{loading ? 'Loading...' : lowTemp}°F</span></h3>
+        <h3> High: <span className="span">{loading ? 'Loading...' : highTemp}°F</span></h3>
+      </section>}
     </div>
   );
 };

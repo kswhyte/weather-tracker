@@ -15,10 +15,13 @@ const Settings = ({ pinnedCities, removeCity }) => {
   return (
     <div className="settings-menu">
       <h1 className="pinned-cities-title">Pinned Cities:</h1>
-      <ul className="settings-city-name">
+      <ul className="settings-city-list">
         {pinnedCities ?
         pinnedCities.map((city, i) =>
-          <li key={i}>
+          <li
+            className="pinned-city-name"
+            key={i}
+          >
             <Link to={`/weather/${city}`}>
               {city}
             </Link>
@@ -29,7 +32,7 @@ const Settings = ({ pinnedCities, removeCity }) => {
             </button>
           </li>,
         )
-        : <li>Add a city to the list below: </li>}
+        : <li className="add-city-text">Pin up to 3 cities below: </li>}
       </ul>
       <NewLocationInputContainer disabled={disabled} />
     </div>

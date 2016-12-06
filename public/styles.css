@@ -1,74 +1,134 @@
+/*$catamaran: 'Catamaran', sans-serif;
+$oswald: 'Oswald', sans-serif;
+$montserrat: 'Montserrat', sans-serif;*/
+
 body {
-  background-image: url('./images/partly-cloudy.jpg');
+  background-image: url('./images-background-vert/black-white-sky.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Catamaran', sans-serif;
 }
+
+/*//__________________________*/
+/*HEADER*/
 
 .main-header {
   margin: auto;
-  padding: 10px;
+  padding: 30px 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-name {
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  padding: 0 40px;
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family:
 }
 
 button {
+  background: #000;
+  color: #ec0063;
   border-style: none;
   border-radius: 10px;
-  color: #212121;
   font-weight: 400;
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
   width: 100px;
   height: 40px;
+  outline: none;
 }
 
 button:hover {
-  background: black;
-  color: white;
+  background: #212121;
+  color: #00ffe8;
 }
 
-.delete-button {
-  width: 20px;
-  height: 20px;
-  margin: 10px;
-}
+/*//__________________________*/
+/*DROP-DOWN*/
 
-.settings-button {
-  display: inline-block;
-}
-
-.location-name {
-  display: inline-block;
-  padding: 0 10%;
-  font-weight: 400;
-  font-size: 35px;
-  letter-spacing: 3px;
+.drop-down-list-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-transform: uppercase;
+  margin: 0 auto 10px auto;
+}
+
+.city-name a {
+  text-decoration: none;
+  margin: 30px auto;
+}
+
+.plus-symbol {
+  font-size: 40px;
+  color: #00ffe8;
+  margin-top: 10px;
+}
+
+.current {
+  font-size: 15px;
+  color: #000;
+  padding: 5px;
 }
 
 .dropdown-button {
   display: inline-block;
 }
 
-.weather-card, .settings-menu {
-  margin: 15px auto;
+.current-location-link a, .add-city-link a {
+  text-decoration: none;
+}
+
+a:-webkit-any-link {
+  color: white;
+  text-decoration: none;
+  cursor: auto;
+}
+
+/*//__________________________*/
+/*SETTINGS*/
+
+.settings-menu {
+  margin: 0 auto;
   text-align: center;
-  padding: 20px 5px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: 300;
+  padding: 20px 0 10px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
   letter-spacing: 1px;
-  width: 40%;
+  max-width: 400px;
   height: 20%;
-  border: 2px solid black;
-  background-color: gray;
+  color: #fec227;
+  background-color: #141414;
   opacity: 0.8;
 }
 
-input {
-  margin: 15px auto;
-  text-align: center;
-  display: block;
+.settings-button {
+  display: inline-block;
+}
+
+/*//__________________________*/
+/*FORM ELEMENTS*/
+
+.pinned-cities-title {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 30px;
+}
+
+.add-city-text {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin: 5px auto 40px auto;
 }
 
 .add-city-button {
@@ -77,34 +137,136 @@ input {
   display: block;
 }
 
-.current {
+.settings-city-list {
+  margin: 20px auto;
+}
+
+.pinned-city-name {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.pinned-city-name a {
+  margin: 3px 5px;
+  height: 20px;
+  padding: 3px;
+  text-transform: uppercase;
   font-size: 15px;
-  color: white;
-  padding: 5px;
+}
+
+.delete-button {
+  width: 20px;
+  height: 20px;
+  margin: 2px 5px 0 5px;
+  border-radius: 5px;
+}
+
+/*//__________________________*/
+/*INPUT FIELD*/
+
+.input-city-field {
+  margin: 15px auto;
+  text-align: center;
+  display: block;
+  width: 200px;
+  height: 20px;
+  padding: 3px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #141414;
+  outline: none;
+  border-color: #8c8c8c;
+}
+
+input[type=text] {
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+
+/*//__________________________*/
+/*CURRENT WEATHER*/
+
+.weather-card {
+  margin: 0 auto 20px auto;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  max-width: 400px;
+  height: 20%;
+  color: #fec227;
+  background-color: #141414;
+  opacity: 0.8;
+}
+
+.summary-data {
+  color: #fec227;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.day-of-the-week {
+  color: #00ffe8;
+}
+
+.span {
+  color: #fff;
+}
+
+/*//__________________________*/
+
+h2 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 10px;
 }
 
 h3 {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 2px;
-  font: white;
+  font: #000;
 }
 
-.summary-data {
-  color: white;
-  font-size: 12px;
-  padding: 3px;
+.today-at-time {
+  color: #ec0063;
 }
 
-.fullday {
+.extended, .fullday {
   padding: 10px;
+  text-align: center;
+  margin: auto;
 }
 
-.extended {
-text-align: center;
-margin: auto;
+.extended-button, .fullday-button {
+  width: 200px;
 }
 
-.extended-button {
-  width: 300px;
+.extended-button, {
+  margin-bottom: 20px;
 }

@@ -63,6 +63,7 @@ describe('APPreducer', () => {
       description: 'clear sky',
       humidity: 16,
       icon: '01d',
+      loading: false,
       mainWeather: 'Clear',
       temp: 51.21,
       tempMax: 55.4,
