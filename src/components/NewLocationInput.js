@@ -14,6 +14,7 @@ const NewLocationInput = ({ onSubmit, pinCity, disabled }) => {
         }}
       >
         <input
+          className="input-city-field"
           ref={(node) => { input = node; }}
           type="text"
           placeholder="Enter a City..."
@@ -33,7 +34,7 @@ const NewLocationInput = ({ onSubmit, pinCity, disabled }) => {
 NewLocationInput.propTypes = {
   onSubmit: PropTypes.func,
   pinCity: PropTypes.func,
-  disabled: PropTypes.bool,
+  disabled: PropTypes.string,
 };
 
 module.exports = NewLocationInput;
