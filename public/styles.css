@@ -43,6 +43,7 @@ button {
   text-transform: uppercase;
   width: 100px;
   height: 40px;
+  outline: none;
 }
 
 button:hover {
@@ -58,12 +59,19 @@ button:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  margin: 0 auto 10px auto;
 }
 
-.city-name {
-  /*font-family: 'Oswald', sans-serif;*/
+.city-name a {
   text-decoration: none;
+  margin: 30px auto;
+}
+
+.plus-symbol {
+  font-size: 40px;
+  color: #00ffe8;
+  margin-top: 10px;
 }
 
 .current {
@@ -78,7 +86,6 @@ button:hover {
 
 .current-location-link a, .add-city-link a {
   text-decoration: none;
-  /*color: white;*/
 }
 
 a:-webkit-any-link {
@@ -90,50 +97,38 @@ a:-webkit-any-link {
 /*//__________________________*/
 /*SETTINGS*/
 
+.settings-menu {
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0 10px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  max-width: 400px;
+  height: 20%;
+  color: #fec227;
+  background-color: #141414;
+  opacity: 0.8;
+}
+
 .settings-button {
   display: inline-block;
 }
 
-/*.settings-menu {
-  margin: 0 auto 30px auto;
-  text-align: center;
-  padding: 20px 5px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  width: 40%;
-  height: 20%;
-  border: 2px solid grey;
-  background-color: #fff;
-  opacity: 0.8;
-}*/
+/*//__________________________*/
+/*FORM ELEMENTS*/
 
-.input-city-field {
-  margin: 15px auto;
-  text-align: center;
-  display: block;
+.pinned-cities-title {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 30px;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.add-city-text {
+  font-family: 'Catamaran', sans-serif;
   font-size: 14px;
-  font-family:
-  color: pink;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  font-size: 14px;
-  font-family:
-  color: pink;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  font-size: 14px;
-  font-family:
-  color: pink;
-}
-:-moz-placeholder { /* Firefox 18- */
-  font-size: 14px;
-  font-family:
-  color: pink;
+  color: #fff;
+  margin: 5px auto 40px auto;
 }
 
 .add-city-button {
@@ -142,16 +137,79 @@ a:-webkit-any-link {
   display: block;
 }
 
+.settings-city-list {
+  margin: 20px auto;
+}
+
+.pinned-city-name {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.pinned-city-name a {
+  margin: 3px 5px;
+  height: 20px;
+  padding: 3px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
 .delete-button {
   width: 20px;
   height: 20px;
-  margin: 10px;
+  margin: 2px 5px 0 5px;
+  border-radius: 5px;
+}
+
+/*//__________________________*/
+/*INPUT FIELD*/
+
+.input-city-field {
+  margin: 15px auto;
+  text-align: center;
+  display: block;
+  width: 200px;
+  height: 20px;
+  padding: 3px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #141414;
+  outline: none;
+  border-color: #8c8c8c;
+}
+
+input[type=text] {
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: #00ffe8;
 }
 
 /*//__________________________*/
 /*CURRENT WEATHER*/
 
-.weather-card, .settings-menu {
+.weather-card {
   margin: 0 auto 20px auto;
   text-align: center;
   padding: 20px 0;
@@ -182,11 +240,21 @@ a:-webkit-any-link {
 
 /*//__________________________*/
 
+h2 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
 h3 {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 2px;
   font: #000;
+}
+
+.today-at-time {
+  color: #ec0063;
 }
 
 .extended, .fullday {
@@ -195,7 +263,7 @@ h3 {
   margin: auto;
 }
 
-.extended-button, .full-day-button {
+.extended-button, .fullday-button {
   width: 200px;
 }
 

@@ -9,7 +9,10 @@ const DropDown = ({ pinnedCities }) => {
     <ul className="drop-down-list-items">
       {pinnedCities ?
       pinnedCities.map((city, i) =>
-        <li className="city-name" key={i}>
+        <li
+          className="city-name"
+          key={i}
+        >
           <Link to={`/weather/${city}`}>
             {city}
           </Link>
@@ -23,7 +26,7 @@ const DropDown = ({ pinnedCities }) => {
       </li>
       <li className="add-city-link">
         <Link to={'/settings'}>
-          +
+          <span className="plus-symbol">+</span>
         </Link>
       </li>
     </ul>

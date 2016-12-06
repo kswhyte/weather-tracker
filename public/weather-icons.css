@@ -4,19 +4,13 @@
   margin: 0 auto 10px auto;
 }
 
-.snow {
+.snow, .light-snow {
   background: url('./svg/snow.svg');
-}
-.rain {
-  background: url('./svg/rain.svg');
 }
 .storm {
   background: url('./svg/storm.svg');
 }
-.light-snow {
-  background: url('./svg/snow.svg');
-}
-.light-rain {
+.rain, .light-rain, .moderate-rain {
   background: url('./svg/rain.svg');
 }
 .thunderstorm {
@@ -30,4 +24,7 @@
 }
 .clear-sky {
   background: url('./svg/clear-sky.svg');
+}
+.broken-clouds, .scattered-clouds, .overcast-clouds, .few-clouds {
+  background: url('./svg/cloudy.svg');
 }
