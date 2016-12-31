@@ -20,10 +20,10 @@ In this project we built a react/redux weather app that allows you to see differ
 
 ####API Key:
 
-We used the OpenWeatherMap API to retrieve weather data.
+We used the OpenWeatherMap API to retrieve weather data. The OpenWeatherMap API does not use security precaution, and thus has enabled cross-origin resource sharing (CORS) on their servers. Thus when testing this app, it is necessary to allow your browser to load "unsafe scripts" in order to render fresh weather information and current weather data.
 
 ---
 
 [Original Assignment](http://frontend.turing.io/projects/weather-forecast.html)
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Visit the [Weather Tracker App](https://kswhyte.github.io/weather-tracker/) to view it in the browser.
