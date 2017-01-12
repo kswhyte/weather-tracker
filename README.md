@@ -6,7 +6,11 @@ In this project we built a react/redux weather app that allows you to see differ
 
 ###Examples:
 
+<img width="1275" alt="screen shot 2017-01-11 at 9 50 37 pm" src="https://cloud.githubusercontent.com/assets/13802107/21877423/4059c376-d848-11e6-87c7-96f46d84208b.png">
 
+<img width="1263" alt="screen shot 2017-01-11 at 9 51 07 pm" src="https://cloud.githubusercontent.com/assets/13802107/21877426/44978ac2-d848-11e6-98ab-c3a55a311096.png">
+
+<img width="1274" alt="screen shot 2017-01-11 at 9 51 37 pm" src="https://cloud.githubusercontent.com/assets/13802107/21877429/49d1716a-d848-11e6-9335-f25beda16408.png">
 
 ### React/Redux Weather Forecast Application
 
