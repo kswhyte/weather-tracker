@@ -1,5 +1,13 @@
 # Weather Tracker
 
+####Overview:
+
+In this project we built a react/redux weather app that allows you to see different forecast information for a given city, and set favorite cities to pin to the home page, including by city name and zipcode any where in the world.
+
+###Examples:
+
+
+
 ### React/Redux Weather Forecast Application
 
 This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -7,10 +15,6 @@ This project template was built with [Create React App](https://github.com/faceb
 ---
 
 ###Specification
-
-####Overview:
-
-In this project we built a react/redux weather app that allows you to see different forecast information for a given city, and set favorite cities to pin to the home page.
 
 ####Main Goals:
 
