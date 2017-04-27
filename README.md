@@ -1,10 +1,10 @@
 # Weather Tracker
 
-####Overview:
+#### Overview:
 
 In this project we built a react/redux weather app that allows you to see different forecast information for a given city, and set favorite cities to pin to the home page, including by city name and zipcode any where in the world.
 
-###Examples:
+### Examples:
 
 <img width="1275" alt="screen shot 2017-01-11 at 9 50 37 pm" src="https://cloud.githubusercontent.com/assets/13802107/21877423/4059c376-d848-11e6-87c7-96f46d84208b.png">
 
@@ -18,15 +18,15 @@ This project template was built with [Create React App](https://github.com/faceb
 
 ---
 
-###Specification
+### Specification
 
-####Main Goals:
+#### Main Goals:
 
 - Retrieve and display forecast data from the OpenWeatherMap API
 - Use the Geolocation API to determine the weather in your current city
 - Save “pinned” or favorite cities to display their extended weather forecasts
 
-####API Key:
+#### API Key:
 
 We used the OpenWeatherMap API to retrieve weather data. A Note about using the live version: 
 
